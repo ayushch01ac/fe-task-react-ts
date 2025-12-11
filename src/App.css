@@ -1,11 +1,24 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 24px auto;
   padding: 2rem;
   text-align: center;
 }
 
-h2 {
-  text-align: left;
+#head {
+  color: black;
 }
 
+h2 {
+  text-align: left;
+  padding: 14px, 120px, 14px, 120px;
+}
+
+.ofbusiness {
+  background-image: linear-gradient(to left,#07CDBE, #006EFA);
+  padding: 14px, 120px, 14px, 120px;
+}
+
+.home {
+  background-color: white;
+}

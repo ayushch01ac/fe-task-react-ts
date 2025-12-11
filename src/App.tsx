@@ -64,10 +64,13 @@ function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div className="home">
+      <div className="ofbusiness">
+        <h2>Ofbusiness</h2>
+      </div>
       <h2 id="head">Contact Manager</h2>
       <DisplayContacts contactsList={contactsList} />
-    </>
+    </div>
   );
 }
 

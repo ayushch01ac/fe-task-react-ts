@@ -1,35 +1,74 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react'
+import "./App.css";
+import DisplayContacts, {
+  type Contact,
+} from "./components/DisplayContacts/DisplayContacts";
+
+const contactsList: Contact[] = [
+  {
+    id: 1,
+    fullName: "Priya Sharma",
+    contact: "98734 8332",
+    email: "example.priya@gmail.com",
+    address: "Plot No. 57, Industrial Area Phase 2, Chandigarh, Punjab, 160002",
+  },
+  {
+    id: 2,
+    fullName: "Rahul Mehta",
+    contact: "91234 8332",
+    email: "example.rahul@example.com",
+    address:
+      "Unit 4B, MIDC Taloja, Sector 10, Navi Mumbai, Maharashtra, 410208",
+  },
+  {
+    id: 3,
+    fullName: "Sneha Rao",
+    contact: "82734 8332",
+    email: "example.sneha@example.com",
+    address:
+      "Khasra No. 432, Village Behrampur, Sector 59, Gurugram, Haryana, 122101",
+  },
+  {
+    id: 4,
+    fullName: "Tanvi Verma",
+    contact: "93734 8332",
+    email: "example.tanvi@example.com",
+    address:
+      "Building 12, Tech Park, Electronic City, Bengaluru, Karnataka, 560100",
+  },
+  {
+    id: 5,
+    fullName: "Gaurav Agarwal",
+    contact: "94234 8332",
+    email: "example.gaurav@example.com",
+    address: "Plot No. 23, Sector 15, Noida, Uttar Pradesh, 201301",
+  },
+  {
+    id: 6,
+    fullName: "Ritikka Singh",
+    contact: "86543 2109",
+    email: "example.ritika@example.com",
+    address:
+      "Flat 402, Gold Nest, Lokhandwala Complex, Andheri, Mumbai, Maharashtra, 400053",
+  },
+  {
+    id: 7,
+    fullName: "Kavya Gupta",
+    contact: "97654 3210",
+    email: "example.kavya@example.com",
+    address: "Survey No. 45, Near Railway Station, Jodhpur, Rajasthan, 342001",
+  },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h2 id="head">Contact Manager</h2>
+      <DisplayContacts contactsList={contactsList} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

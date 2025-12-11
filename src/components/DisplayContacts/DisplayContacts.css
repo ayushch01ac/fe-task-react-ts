@@ -1,0 +1,35 @@
+.contact-list {
+    background-color: white;
+    color: black;
+    border: 1px solid #E2E8F0;
+}
+
+.action {
+    text-align: left;
+}
+
+.heading {
+    background-color: #F1F5F9;
+    text-align: left;
+}
+
+th {
+  font-weight: normal;
+   border: 1px solid #ccc;
+   padding: 8px;
+}
+
+table {
+    /* width: 100%; */
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.contact {
+    white-space: nowrap;
+}

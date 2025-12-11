@@ -1,0 +1,13 @@
+.search-box {
+    padding-bottom: 1px;
+    padding-top: 1px;
+    border: 1px solid black;
+    flex-direction: row;
+    justify-content: left;
+    background-color: white;
+    gap: 8px;
+    border-radius: 6px;
+    width: 360px;
+    height: 36px;
+    color: black;
+}

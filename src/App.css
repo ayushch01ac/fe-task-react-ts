@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.search-add {
+  display: flex;
+}
+
 #head {
   color: black;
 }

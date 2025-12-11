@@ -1,8 +1,9 @@
-// import { useState } from 'react'
+import { useState } from "react";
 import "./App.css";
 import DisplayContacts, {
   type Contact,
 } from "./components/DisplayContacts/DisplayContacts";
+import SearchContacts from "./components/SearchContacts/SearchContacts";
 
 const contactsList: Contact[] = [
   {
@@ -61,7 +62,7 @@ const contactsList: Contact[] = [
 ];
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const [value, setValue] = useState("");
 
   return (
     <div className="home">
@@ -69,6 +70,9 @@ function App() {
         <h2>Ofbusiness</h2>
       </div>
       <h2 id="head">Contact Manager</h2>
+      <div className="search-add">
+        <SearchContacts value={value} onChange={setValue} />
+      </div>
       <DisplayContacts contactsList={contactsList} />
     </div>
   );

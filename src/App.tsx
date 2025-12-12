@@ -67,29 +67,34 @@ function App() {
   // const [clicked, setClicked] = useState(false);
 
   return (
-    <div className="home">
-      {/* Have to put this in header component later */}
+    <>
       <header>
         <div className="ofbusiness">
           <h2>Ofbusiness</h2>
         </div>
       </header>
-      <h2 id="head">Contact Manager</h2>
-      <div className="search-add">
-        <div>
-          <SearchContacts value={value} onChange={setValue} />
-        </div>
+      <div className="home">
+        {/* Have to put this in header component later */}
 
-        <div>
-          <AddContact
-            onClick={() => {
-              console.log("Clicked!");
-            }}
-          />
+        <div className="full-size">
+          <h2 id="head">Contact Manager</h2>
+          <div className="search-add">
+            <div>
+              <SearchContacts value={value} onChange={setValue} />
+            </div>
+
+            <div>
+              <AddContact
+                onClick={() => {
+                  console.log("Clicked!");
+                }}
+              />
+            </div>
+          </div>
+          <DisplayContacts contactsList={contactsList} />
         </div>
       </div>
-      <DisplayContacts contactsList={contactsList} />
-    </div>
+    </>
   );
 }
 

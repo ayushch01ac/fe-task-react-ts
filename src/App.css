@@ -1,7 +1,8 @@
 #root {
   max-width: 1280px;
-  margin: 24px auto;
-  padding: 2rem;
+  /* margin: 24px auto; */
+  /* padding: 2rem; */
+  margin: auto;
   text-align: center;
 }
 
@@ -24,10 +25,20 @@ h2 {
 
 .ofbusiness {
   background-image: linear-gradient(to left,#07CDBE, #006EFA);
-  padding: 14px, 120px, 14px, 120px;
-  margin: 0;
+  /* padding: 14px, 120px, 14px, 120px;
+  margin: 0; */
 }
 
-.home {
+/* .home {
   background-color: white;
+  height: 733px;
+  width: 1280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.full-size {
+  height: 649px;
+  width: 1040px;
 }

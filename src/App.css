@@ -7,6 +7,10 @@
 
 .search-add {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-bottom: 14px;
 }
 
 #head {
@@ -21,6 +25,7 @@ h2 {
 .ofbusiness {
   background-image: linear-gradient(to left,#07CDBE, #006EFA);
   padding: 14px, 120px, 14px, 120px;
+  margin: 0;
 }
 
 .home {

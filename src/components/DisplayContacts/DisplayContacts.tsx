@@ -77,7 +77,7 @@ function DisplayContacts({ contactsList }: { contactsList: Contact[] }) {
             <th>Contact</th>
             <th>Email</th>
             <th>Address</th>
-            <th className="action">Action</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -95,9 +95,9 @@ function DisplayContacts({ contactsList }: { contactsList: Contact[] }) {
                 <td className="contact">{c.contact}</td>
                 <td>{c.email}</td>
                 <td>{c.address}</td>
-                <td>
-                  <button>Edit</button>
-                  <button>Delete</button>
+                <td className="action">
+                  <button>E</button>
+                  <button>D</button>
                 </td>
               </tr>
             ))

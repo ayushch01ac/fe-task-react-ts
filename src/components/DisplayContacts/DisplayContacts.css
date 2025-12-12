@@ -5,7 +5,7 @@
 }
 
 .action {
-    text-align: left;
+    display: flex;
 }
 
 .heading {

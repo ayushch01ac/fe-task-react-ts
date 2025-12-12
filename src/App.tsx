@@ -4,6 +4,7 @@ import DisplayContacts, {
   type Contact,
 } from "./components/DisplayContacts/DisplayContacts";
 import SearchContacts from "./components/SearchContacts/SearchContacts";
+import AddContact from "./components/AddContact/AddContact";
 
 const contactsList: Contact[] = [
   {
@@ -63,15 +64,29 @@ const contactsList: Contact[] = [
 
 function App() {
   const [value, setValue] = useState("");
+  // const [clicked, setClicked] = useState(false);
 
   return (
     <div className="home">
-      <div className="ofbusiness">
-        <h2>Ofbusiness</h2>
-      </div>
+      {/* Have to put this in header component later */}
+      <header>
+        <div className="ofbusiness">
+          <h2>Ofbusiness</h2>
+        </div>
+      </header>
       <h2 id="head">Contact Manager</h2>
       <div className="search-add">
-        <SearchContacts value={value} onChange={setValue} />
+        <div>
+          <SearchContacts value={value} onChange={setValue} />
+        </div>
+
+        <div>
+          <AddContact
+            onClick={() => {
+              console.log("Clicked!");
+            }}
+          />
+        </div>
       </div>
       <DisplayContacts contactsList={contactsList} />
     </div>

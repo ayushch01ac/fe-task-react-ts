@@ -77,7 +77,7 @@ function DisplayContacts({ contactsList }: { contactsList: Contact[] }) {
             <th>Contact</th>
             <th>Email</th>
             <th>Address</th>
-            <th>Action</th>
+            <th className="actionHead">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -91,7 +91,7 @@ function DisplayContacts({ contactsList }: { contactsList: Contact[] }) {
                 <td>
                   <input type="checkbox" className="select" />
                 </td>
-                <td>{c.fullName}</td>
+                <td style={{ whiteSpace: "nowrap" }}>{c.fullName}</td>
                 <td className="contact">{c.contact}</td>
                 <td>{c.email}</td>
                 <td>{c.address}</td>

@@ -5,6 +5,8 @@ import DisplayContacts, {
 } from "./components/DisplayContacts/DisplayContacts";
 import SearchContacts from "./components/SearchContacts/SearchContacts";
 import AddContact from "./components/AddContact/AddContact";
+import BulkDelete from "./components/BulkDelete/BulkDelete";
+import ContactFormModal from "./components/ContactFormModal/ContactFormModal";
 
 const contactsList: Contact[] = [
   {
@@ -60,15 +62,38 @@ const contactsList: Contact[] = [
     email: "example.kavya@example.com",
     address: "Survey No. 45, Near Railway Station, Jodhpur, Rajasthan, 342001",
   },
+  {
+    id: 8,
+    fullName: "Kavya Gupta",
+    contact: "97654 3210",
+    email: "example.kavya@example.com",
+    address: "Survey No. 45, Near Railway Station, Jodhpur, Rajasthan, 342001",
+  },
+  {
+    id: 9,
+    fullName: "Kavya Gupta",
+    contact: "97654 3210",
+    email: "example.kavya@example.com",
+    address: "Survey No. 45, Near Railway Station, Jodhpur, Rajasthan, 342001",
+  },
+  {
+    id: 10,
+    fullName: "Kavya Gupta",
+    contact: "97654 3210",
+    email: "example.kavya@example.com",
+    address: "Survey No. 45, Near Railway Station, Jodhpur, Rajasthan, 342001",
+  },
 ];
 
 function App() {
   const [value, setValue] = useState("");
   // const [clicked, setClicked] = useState(false);
+  const [addContact, setAddContact] = useState(false);
+  const [bulkDelete, setBulkDelete] = useState(false);
 
   return (
     <>
-      <header>
+      <header className="header">
         <div className="ofbusiness">
           <h2>Ofbusiness</h2>
         </div>
@@ -82,12 +107,18 @@ function App() {
             <div>
               <SearchContacts value={value} onChange={setValue} />
             </div>
-
             <div>
-              <AddContact
+              <BulkDelete
                 onClick={() => {
-                  console.log("Clicked!");
+                  setBulkDelete(true);
                 }}
+              />
+            </div>
+            <div>
+              <AddContact onClick={() => setAddContact(true)} />
+              <ContactFormModal
+                isOpen={addContact}
+                onClose={() => setAddContact(false)}
               />
             </div>
           </div>

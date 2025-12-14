@@ -33,3 +33,7 @@ td {
 .contact {
     white-space: nowrap;
 }
+
+.heading > .actionHead {
+    text-align: center;
+}

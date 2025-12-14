@@ -1,9 +1,9 @@
 #root {
-  /* max-width: 100%; */
-  /* margin: 24px auto; */
-  /* padding: 2rem; */
   margin: 0;
+  padding: 0;
   text-align: center;
+  justify-content: center;
+  background-color: aliceblue;
 }
 
 .search-add {
@@ -16,17 +16,21 @@
 
 #head {
   color: black;
+  margin-bottom: 0px;
 }
 
 h2 {
   text-align: left;
-  padding: 14px, 120px, 14px, 120px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 .ofbusiness {
   background-image: linear-gradient(to left,#07CDBE, #006EFA);
-  /* padding: 14px, 120px, 14px, 120px;
-  margin: 0; */
+  padding: 14px, 120px, 14px, 120px;
+  margin: 0 auto;
 }
 
 /* .home {
@@ -41,8 +45,20 @@ h2 {
 .full-size {
   height: 649px;
   width: 1040px;
+  margin: 0 auto;
 }
 
+/* .full-size {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+} */
+
 header {
-  margin: 0%;
+  width: 100vw;
 }
+
+/* .header {
+  width: 100vw;
+  background: linear-gradient(90deg, #0072ff, #00c6a7);
+} */

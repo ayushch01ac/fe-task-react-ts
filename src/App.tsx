@@ -62,34 +62,25 @@ const contactsList: Contact[] = [
     email: "example.kavya@example.com",
     address: "Survey No. 45, Near Railway Station, Jodhpur, Rajasthan, 342001",
   },
-  {
-    id: 8,
-    fullName: "Kavya Gupta",
-    contact: "97654 3210",
-    email: "example.kavya@example.com",
-    address: "Survey No. 45, Near Railway Station, Jodhpur, Rajasthan, 342001",
-  },
-  {
-    id: 9,
-    fullName: "Kavya Gupta",
-    contact: "97654 3210",
-    email: "example.kavya@example.com",
-    address: "Survey No. 45, Near Railway Station, Jodhpur, Rajasthan, 342001",
-  },
-  {
-    id: 10,
-    fullName: "Kavya Gupta",
-    contact: "97654 3210",
-    email: "example.kavya@example.com",
-    address: "Survey No. 45, Near Railway Station, Jodhpur, Rajasthan, 342001",
-  },
 ];
 
 function App() {
+  const [contacts, setContacts] = useState<Contact[]>(contactsList);
   const [value, setValue] = useState("");
+  const [valueEntered, setValueEntered] = useState("");
   // const [clicked, setClicked] = useState(false);
   const [addContact, setAddContact] = useState(false);
   const [bulkDelete, setBulkDelete] = useState(false);
+
+  const filteredContacts = contacts.filter((c) =>
+    `${c.fullName} ${c.email}`
+      .toLowerCase()
+      .includes(valueEntered.toLowerCase())
+  );
+
+  const handleDeleteContact = (id: number) => {
+    setContacts((prev) => prev.filter((contact) => contact.id !== id));
+  };
 
   return (
     <>
@@ -105,24 +96,37 @@ function App() {
           <h2 id="head">Contact Manager</h2>
           <div className="search-add">
             <div>
-              <SearchContacts value={value} onChange={setValue} />
+              <SearchContacts
+                value={value}
+                onChange={setValue}
+                onEnter={() => setValueEntered(value)}
+              />
             </div>
-            <div>
+            {/* <div>
               <BulkDelete
                 onClick={() => {
                   setBulkDelete(true);
                 }}
               />
-            </div>
+            </div> */}
             <div>
               <AddContact onClick={() => setAddContact(true)} />
               <ContactFormModal
                 isOpen={addContact}
                 onClose={() => setAddContact(false)}
+                onAddContact={(contact) => {
+                  setContacts((prev) => [
+                    ...prev,
+                    { ...contact, id: Date.now() }, // generate id
+                  ]);
+                }}
               />
             </div>
           </div>
-          <DisplayContacts contactsList={contactsList} />
+          <DisplayContacts
+            contactsList={filteredContacts}
+            onDelete={handleDeleteContact}
+          />
         </div>
       </div>
     </>

@@ -37,3 +37,8 @@ td {
 .heading > .actionHead {
     text-align: center;
 }
+
+.edit-delete {
+    color: black;
+    background-color: white;
+}

@@ -86,7 +86,7 @@ function App() {
     <>
       <header className="header">
         <div className="ofbusiness">
-          <h2>Ofbusiness</h2>
+          <h2 style={{ paddingLeft: 210 }}>Ofbusiness</h2>
         </div>
       </header>
       <div className="home">

@@ -73,3 +73,14 @@ export default defineConfig([
   },
 ])
 ```
+# How to run
+
+Use following commands:
+```bash
+
+clone repoLink
+
+npm install
+
+npm run dev
+```

@@ -38,4 +38,17 @@
     color: white;
     display: flex;
     justify-content: flex-end;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.form-fields {
+  color: black;
+  margin-bottom: 2px;
+  margin-top: 4px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
 }

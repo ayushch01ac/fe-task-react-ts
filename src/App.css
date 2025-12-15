@@ -46,6 +46,9 @@ h2 {
   height: 649px;
   width: 1040px;
   margin: 0 auto;
+  background-color: white;
+  border-radius: 5px;
+  padding: 16px;
 }
 
 /* .full-size {

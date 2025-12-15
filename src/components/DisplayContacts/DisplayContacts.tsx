@@ -33,7 +33,9 @@ function DisplayContacts({
             <th>Contact</th>
             <th>Email</th>
             <th>Address</th>
-            <th className="actionHead">Action</th>
+            <th className="actionHead" style={{ textAlign: "center" }}>
+              Action
+            </th>
           </tr>
         </thead>
         <tbody>

@@ -22,7 +22,7 @@ export default function DeleteModal({ isOpen, onClose, onConfirm }: Props) {
         <button
           type="button"
           onClick={onClose}
-          style={{ padding: 10, margin: 10 }}
+          style={{ padding: 10, margin: 10, backgroundColor: "white" }}
         >
           X
         </button>
@@ -33,7 +33,9 @@ export default function DeleteModal({ isOpen, onClose, onConfirm }: Props) {
         This action cannot be undone
       </p>
       <div className="close-contact-card">
-        <button onClick={onClose}>Cancel</button>
+        <button onClick={onClose} style={{ backgroundColor: "white" }}>
+          Cancel
+        </button>
         <button onClick={onConfirm}>Delete</button>
       </div>
     </Modal>

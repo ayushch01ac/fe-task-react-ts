@@ -46,49 +46,59 @@ export default function ContactFormModal({
         <button
           type="button"
           onClick={onClose}
-          style={{ padding: 10, margin: 10 }}
+          style={{ padding: 10, margin: 10, backgroundColor: "white" }}
         >
           X
         </button>
       </div>
       <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input
-          type="text"
-          placeholder="Enter name"
-          name="fullName"
-          value={form.fullName}
-          onChange={handleChange}
-          required
-        />
-        <label>Contact No.</label>
-        <input
-          type="number"
-          placeholder="Enter contact no."
-          name="contact"
-          value={form.contact}
-          onChange={handleChange}
-        />
-        <label>Email</label>
-        <input
-          type="email"
-          placeholder="Enter email"
-          name="email"
-          required
-          value={form.email}
-          onChange={handleChange}
-        />
-        <label>Address Line 1</label>
-        <input
-          type="text"
-          placeholder="Enter address"
-          name="address"
-          required
-          value={form.address}
-          onChange={handleChange}
-        />
+        <div className="form-field">
+          <label className="form-fields">Name</label>
+          <br />
+          <input
+            type="text"
+            placeholder="Enter name"
+            name="fullName"
+            value={form.fullName}
+            onChange={handleChange}
+            required
+          />
+          <label className="form-fields">Contact No.</label>
+          <br />
+          <input
+            type="number"
+            placeholder="Enter contact no."
+            name="contact"
+            value={form.contact}
+            onChange={handleChange}
+          />
+          <label className="form-fields">Email</label>
+          <br />
+          <input
+            type="email"
+            placeholder="Enter email"
+            name="email"
+            required
+            value={form.email}
+            onChange={handleChange}
+          />
+          <label className="form-fields">Address Line 1</label>
+          <br />
+          <input
+            type="text"
+            placeholder="Enter address"
+            name="address"
+            required
+            value={form.address}
+            onChange={handleChange}
+          />
+        </div>
         <div className="close-contact-card">
-          <button type="button" onClick={onClose}>
+          <button
+            type="button"
+            onClick={onClose}
+            style={{ backgroundColor: "white" }}
+          >
             Cancel
           </button>
           <button type="submit">Save Contact</button>

@@ -46,7 +46,12 @@ export default function ContactFormModal({
         <button
           type="button"
           onClick={onClose}
-          style={{ padding: 10, margin: 10, backgroundColor: "white" }}
+          style={{
+            padding: 10,
+            margin: 10,
+            backgroundColor: "white",
+            color: "red",
+          }}
         >
           X
         </button>
@@ -101,7 +106,9 @@ export default function ContactFormModal({
           >
             Cancel
           </button>
-          <button type="submit">Save Contact</button>
+          <button type="submit" style={{ color: "white" }}>
+            Save Contact
+          </button>
         </div>
       </form>
     </Modal>

@@ -22,7 +22,12 @@ export default function DeleteModal({ isOpen, onClose, onConfirm }: Props) {
         <button
           type="button"
           onClick={onClose}
-          style={{ padding: 10, margin: 10, backgroundColor: "white" }}
+          style={{
+            padding: 10,
+            margin: 10,
+            backgroundColor: "white",
+            color: "red",
+          }}
         >
           X
         </button>
@@ -36,7 +41,9 @@ export default function DeleteModal({ isOpen, onClose, onConfirm }: Props) {
         <button onClick={onClose} style={{ backgroundColor: "white" }}>
           Cancel
         </button>
-        <button onClick={onConfirm}>Delete</button>
+        <button onClick={onConfirm} style={{ color: "white" }}>
+          Delete
+        </button>
       </div>
     </Modal>
   );

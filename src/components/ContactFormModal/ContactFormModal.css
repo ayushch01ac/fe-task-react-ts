@@ -42,13 +42,23 @@
     gap: 15px;
 }
 
-.form-fields {
-  color: black;
-  margin-bottom: 2px;
-  margin-top: 4px;
+.form-field {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 24px;
 }
 
-.form-field {
-  display: flex;
-  flex-direction: column;
+.form-fields {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+  color: rgba(100, 116, 139, 1);
+  font-weight:normal;
+  border-radius: 1px;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
 }

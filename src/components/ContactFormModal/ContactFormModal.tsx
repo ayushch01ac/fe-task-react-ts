@@ -22,6 +22,10 @@ export default function ContactFormModal({
     email: "",
     address: "",
   });
+  const [address1, setAddress1] = useState("");
+  const [address2, setAddress2] = useState("");
+  const [state, setState] = useState("");
+  const [pincode, setPincode] = useState("");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -29,9 +33,31 @@ export default function ContactFormModal({
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    onAddContact(form);
-    onClose();
+    if (!address1.trim()) {
+      alert("Address Line 1 is required");
+      return;
+    }
+
+    if (!pincode.trim()) {
+      alert("Pincode is required");
+      return;
+    }
+    const fullAddress = [address1, address2, state, pincode]
+      .map((item) => item.trim())
+      .filter(Boolean)
+      .join(", ");
+
+    onAddContact({
+      ...form,
+      address: fullAddress,
+    });
+
     setForm({ fullName: "", contact: "", email: "", address: "" });
+    setAddress1("");
+    setAddress2("");
+    setState("");
+    setPincode("");
+    onClose();
   }
 
   return (
@@ -58,45 +84,85 @@ export default function ContactFormModal({
       </div>
       <form onSubmit={handleSubmit}>
         <div className="form-field">
-          <label className="form-fields">Name</label>
-          <br />
-          <input
-            type="text"
-            placeholder="Enter name"
-            name="fullName"
-            value={form.fullName}
-            onChange={handleChange}
-            required
-          />
-          <label className="form-fields">Contact No.</label>
-          <br />
-          <input
-            type="number"
-            placeholder="Enter contact no."
-            name="contact"
-            value={form.contact}
-            onChange={handleChange}
-          />
-          <label className="form-fields">Email</label>
-          <br />
-          <input
-            type="email"
-            placeholder="Enter email"
-            name="email"
-            required
-            value={form.email}
-            onChange={handleChange}
-          />
-          <label className="form-fields">Address Line 1</label>
-          <br />
-          <input
-            type="text"
-            placeholder="Enter address"
-            name="address"
-            required
-            value={form.address}
-            onChange={handleChange}
-          />
+          <div className="field">
+            <label className="form-fields">
+              Name<span style={{ color: "red" }}>*</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Enter name"
+              name="fullName"
+              value={form.fullName}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="field">
+            <label className="form-fields">Contact No.</label>
+            <input
+              type="number"
+              placeholder="Enter contact no."
+              name="contact"
+              value={form.contact}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <label className="form-fields">
+              Email<span style={{ color: "red" }}>*</span>
+            </label>
+            <input
+              type="email"
+              placeholder="Enter email"
+              name="email"
+              required
+              value={form.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="field">
+            <label className="form-fields">
+              Address Line 1<span style={{ color: "red" }}>*</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Enter address"
+              required
+              value={address1}
+              onChange={(e) => setAddress1(e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label className="form-fields">Address Line 2</label>
+            <input
+              type="text"
+              placeholder="Enter address"
+              required
+              value={address2}
+              onChange={(e) => setAddress2(e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label className="form-fields">State</label>
+            <input
+              type="text"
+              placeholder="Enter state"
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label className="form-fields">
+              Pincode<span style={{ color: "red" }}>*</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Enter pincode"
+              value={pincode}
+              onChange={(e) => setPincode(e.target.value)}
+              required
+            />
+          </div>
         </div>
         <div className="close-contact-card">
           <button

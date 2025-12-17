@@ -40,39 +40,41 @@ function App() {
 
         <div className="full-size">
           <h2 id="head">Contact Manager</h2>
-          <div className="search-add">
-            <div>
-              <SearchContacts
-                value={value}
-                onChange={setValue}
-                onEnter={() => setValueEntered(value)}
-              />
-            </div>
-            {/* <div>
+          <div className="half-size">
+            <div className="search-add">
+              <div>
+                <SearchContacts
+                  value={value}
+                  onChange={setValue}
+                  onEnter={() => setValueEntered(value)}
+                />
+              </div>
+              {/* <div>
               <BulkDelete
                 onClick={() => {
                   setBulkDelete(true);
                 }}
               />
             </div> */}
-            <div>
-              <AddContact onClick={() => setAddContact(true)} />
-              <ContactFormModal
-                isOpen={addContact}
-                onClose={() => setAddContact(false)}
-                onAddContact={(contact) => {
-                  dispatch(
-                    addContacts({
-                      ...contact,
-                      id: Date.now(),
-                    })
-                  );
-                  // setAddContactOpen(false);
-                }}
-              />
+              <div>
+                <AddContact onClick={() => setAddContact(true)} />
+                <ContactFormModal
+                  isOpen={addContact}
+                  onClose={() => setAddContact(false)}
+                  onAddContact={(contact) => {
+                    dispatch(
+                      addContacts({
+                        ...contact,
+                        id: Date.now(),
+                      })
+                    );
+                    // setAddContactOpen(false);
+                  }}
+                />
+              </div>
             </div>
+            <DisplayContacts />
           </div>
-          <DisplayContacts />
         </div>
       </div>
     </>

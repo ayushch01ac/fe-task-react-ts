@@ -45,17 +45,20 @@ h2 {
 .full-size {
   height: 649px;
   width: 1040px;
+  margin: 0 auto; 
+  background-color: aliceblue;
+  /* border-radius: 5px;
+  padding: 16px; */
+}
+
+.half-size {
+  height: 649px;
+  width: 1040px;
   margin: 0 auto;
   background-color: white;
   border-radius: 5px;
   padding: 16px;
 }
-
-/* .full-size {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px;
-} */
 
 header {
   width: 100vw;

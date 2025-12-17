@@ -1,7 +1,7 @@
 import { useState } from "react";
-import type { Contact } from "../DisplayContacts/DisplayContacts";
 import "./ContactFormModal.css";
 import Modal from "react-modal";
+import type { Contact } from "../../types/contact";
 
 Modal.setAppElement("#root");
 

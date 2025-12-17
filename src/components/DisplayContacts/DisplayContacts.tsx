@@ -3,22 +3,14 @@ import "./DisplayContacts.css";
 import { MdDeleteOutline } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import DeleteModal from "../BulkDeleteModal/DeleteModal";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState, AppDispatch } from "../../store/store";
+import { removeContact } from "../../store/slices/contactsSlice";
 
-export type Contact = {
-  id: number;
-  fullName: string;
-  contact: string;
-  email: string;
-  address: string;
-};
+function DisplayContacts() {
+  const contactsList = useSelector((state: RootState) => state.contacts.list);
+  const dispatch = useDispatch<AppDispatch>();
 
-function DisplayContacts({
-  contactsList,
-  onDelete,
-}: {
-  contactsList: Contact[];
-  onDelete: (id: number) => void;
-}) {
   const [deleteId, setDeleteId] = useState<number | null>(null);
 
   return (
@@ -76,7 +68,7 @@ function DisplayContacts({
         onClose={() => setDeleteId(null)}
         onConfirm={() => {
           if (deleteId !== null) {
-            onDelete(deleteId);
+            dispatch(removeContact(deleteId));
             setDeleteId(null);
           }
         }}

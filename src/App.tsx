@@ -7,7 +7,7 @@ import BulkDelete from "./components/BulkDelete/BulkDelete";
 import ContactFormModal from "./components/ContactFormModal/ContactFormModal";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState, AppDispatch } from "./store/store";
-import { addContacts } from "./store/slices/contactsSlice";
+import { addContacts, setSearchTerm } from "./store/slices/contactsSlice";
 
 function App() {
   const contacts = useSelector((state: RootState) => state.contacts.list);
@@ -18,11 +18,23 @@ function App() {
   const [addContact, setAddContact] = useState(false);
   const [bulkDelete, setBulkDelete] = useState(false);
 
-  const filteredContacts = contacts.filter((c) =>
-    `${c.fullName} ${c.email}`
-      .toLowerCase()
-      .includes(valueEntered.toLowerCase())
-  );
+  const filteredContacts = useSelector((state: RootState) => {
+    const { list, searchTerm } = state.contacts;
+
+    if (!searchTerm) return list;
+
+    return list.filter((c) =>
+      `${c.fullName} ${c.email}`
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
+    );
+  });
+
+  // const filteredContacts = contacts.filter((c) =>
+  //   `${c.fullName} ${c.email}`
+  //     .toLowerCase()
+  //     .includes(valueEntered.toLowerCase())
+  // );
 
   // const handleDeleteContact = (id: number) => {
   //   setContacts((prev) => prev.filter((contact) => contact.id !== id));
@@ -46,7 +58,7 @@ function App() {
                 <SearchContacts
                   value={value}
                   onChange={setValue}
-                  onEnter={() => setValueEntered(value)}
+                  onEnter={() => dispatch(setSearchTerm(value))}
                 />
               </div>
               {/* <div>
@@ -73,7 +85,7 @@ function App() {
                 />
               </div>
             </div>
-            <DisplayContacts />
+            <DisplayContacts contactsList={filteredContacts} />
           </div>
         </div>
       </div>

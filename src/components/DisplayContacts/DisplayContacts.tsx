@@ -6,9 +6,14 @@ import DeleteModal from "../BulkDeleteModal/DeleteModal";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../../store/store";
 import { removeContact } from "../../store/slices/contactsSlice";
+import type { Contact } from "../../types/contact";
 
-function DisplayContacts() {
-  const contactsList = useSelector((state: RootState) => state.contacts.list);
+type Props = {
+  contactsList: Contact[];
+};
+
+function DisplayContacts({ contactsList }: Props) {
+  // const contactsList = useSelector((state: RootState) => state.contacts.list);
   const dispatch = useDispatch<AppDispatch>();
 
   const [deleteId, setDeleteId] = useState<number | null>(null);
